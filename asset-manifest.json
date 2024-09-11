@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/arbitlab-admin/static/css/main.ffa9339e.css",
+    "main.js": "/arbitlab-admin/static/js/main.95db8854.js",
+    "static/media/login-icon-3.png": "/arbitlab-admin/static/media/login-icon-3.cd5675ad5f5ec6c8b284.png",
+    "static/media/white-logo.svg": "/arbitlab-admin/static/media/white-logo.4c4c607ce57613d2ebd24fa85e2dae4e.svg",
+    "static/media/black-logo.svg": "/arbitlab-admin/static/media/black-logo.49843e42b28132669c85316294903768.svg",
+    "index.html": "/arbitlab-admin/index.html",
+    "main.ffa9339e.css.map": "/arbitlab-admin/static/css/main.ffa9339e.css.map",
+    "main.95db8854.js.map": "/arbitlab-admin/static/js/main.95db8854.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ffa9339e.css",
+    "static/js/main.95db8854.js"
+  ]
+}
