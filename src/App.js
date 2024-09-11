@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./reset.css";
+import "./global.css";
+
+import React, { useEffect } from "react";
+
+import AppRoutes from "./AppRoutes";
+import { getSubscription } from "./api/api";
+import useStore from "./state/store";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const isLoggedIn = useStore((state) => state.isLoggedIn);
+  const setIsLoggedIn = useStore((state) => state.setIsLoggedIn);
+
+  useEffect(() => {
+    getSubscription().then((data) => {
+      const token = localStorage.getItem("jwtToken");
+      if (!token) {
+        setIsLoggedIn(false);
+        return;
+      }
+
+      if (!data) {
+        setIsLoggedIn(false);
+        return;
+      }
+
+      setIsLoggedIn(true);
+    });
+  }, [isLoggedIn]);
+
+  return <AppRoutes />;
 }
 
 export default App;
