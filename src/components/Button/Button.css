@@ -1,12 +1,67 @@
-.UIbutton {
+.UIButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 50px;
-  background: #959595;
-  border-radius: 10px;
-  font-size: 20px;
-  color: #353535;
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: var(--text-color);
   cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.UIButton:hover,
+.UIButton.UIMainButton:hover {
+    color: #1D1E20 !important;
+    background-color: #EAEDEF !important;
+    border-color: #959697 !important;
+}
+
+.UIButton:active,
+.UIButton.UIMainButton:active {
+  background-color: #c4c9cf !important;
+}
+
+.UIButton.UIButtonWhite:hover,
+.UIButton.UIMainButtonWhite:hover {
+  background-color: #2d2e30 !important;
+}
+
+.UIButton.UIButtonWhite:active,
+.UIButton.UIMainButtonWhite:active {
+  background-color: #3f4043 !important;
+}
+
+.UIButton.UIMainButton {
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+}
+
+.UIButton.UIMainButtonWhite {
+  border: 1px solid #e4e4e4;
+}
+
+.UIButton.UIMainButtonWhite,
+.UIButton.UIButtonWhite {
+  color: #e4e4e4 !important;
+}
+
+.UIMainButtonWarning {
+  color: #8c3c3c !important;
+  border: 1px solid #8c3c3c !important;
+}
+
+.UIMainButtonWarning:hover {
+  color: #8c3c3c !important;
+  background-color: #ee979792 !important;
+  border: 1px solid #8c3c3c !important;
+}
+
+.UIMainButtonWarning:active {
+  color: #8c3c3c !important;
+  background-color: #c7696992 !important;
+  border: 1px solid #8c3c3c !important;
 }

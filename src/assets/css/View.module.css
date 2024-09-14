@@ -1,0 +1,92 @@
+.greeting {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 90px;
+  font-size: 32px;
+  border-bottom: 1px solid #eaedef;
+}
+
+.buttonContainer {
+  max-width: 1580px;
+  width: 90%;
+  margin: 50px auto 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.table {
+  max-width: 1580px;
+  width: 90%;
+  margin: 30px auto;
+  padding: 0 60px;
+  border-collapse: collapse;
+  line-height: 130%;
+}
+
+.table thead {
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.table td {
+  font-size: 14px;
+}
+
+.table tr:nth-of-type(even),
+.table thead tr {
+  background-color: #eaedef;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+}
+
+.table th {
+  padding: 12px !important;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 12px;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.discountMap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.discountMap p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchContainer {
+  max-width: 1580px;
+  width: 90%;
+  margin: 50px auto 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.searchContainer input {
+  width: 280px;
+  padding: 8px 10px;
+  border: 1px solid #eaedef;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.searchContainer p {
+  font-size: 16px;
+  font-weight: 600;
+}

@@ -85,9 +85,7 @@ function Login() {
             </div>
 
             <div className={styles.inputContainer}>
-              <label>
-                Имя пользователя
-              </label>
+              <label>Имя пользователя</label>
               <input
                 type="text"
                 value={username}
@@ -99,9 +97,7 @@ function Login() {
             </div>
 
             <div className={styles.inputContainer}>
-              <label>
-                Пароль
-              </label>
+              <label>Пароль</label>
               <input
                 type="password"
                 value={password}
@@ -129,43 +125,31 @@ function Login() {
         <div className={styles.info}>
           <div className={styles.infoContainer}>
             <p className={styles.infoText}>
-              <span>F</span>actory
+              <span>A</span>rbitlab
             </p>
             <p className={styles.infoText}>
-              F<span>a</span>ctory
+              A<span>r</span>bitlab
             </p>
             <p className={styles.infoText}>
-              Fa<span>c</span>tory
+              Ar<span>b</span>itlab
             </p>
             <p className={styles.infoText}>
-              Fac<span>t</span>ory
+              Arb<span>i</span>tlab
             </p>
             <p className={styles.infoText}>
-              Fact<span>o</span>ry
+              Arbi<span>t</span>lab
             </p>
             <p className={styles.infoText}>
-              Facto<span>r</span>y
+              Arbit<span>l</span>ab
             </p>
             <p className={styles.infoText}>
-              Factor<span>y</span>
+              Arbitl<span>a</span>b
+            </p>
+            <p className={styles.infoText}>
+              Arbitla<span>b</span>
             </p>
 
             <div className={styles.line}></div>
-
-            <ul className={styles.list}>
-              <li>
-                <p>CRM</p>
-                <p className={styles.small}>Client databse</p>
-              </li>
-              <li>
-                <p>Tasker</p>
-                <p className={styles.small}>Virtual manager</p>
-              </li>
-              <li>
-                <p>Factory PLUS</p>
-                <p className={styles.small}>Digital factory control</p>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

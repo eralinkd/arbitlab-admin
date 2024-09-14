@@ -1,4 +1,22 @@
-import { Login, MainPage } from "./views";
+import {
+  LigamentColls,
+  Ligaments,
+  LigamentsAdd,
+  LigamentsInfo,
+  Login,
+  Logout,
+  MainPage,
+  Promocodes,
+  PromocodesAdd,
+  Replenishments,
+  Subscriptions,
+  SubscriptionsAdd,
+  SubscriptionsInfo,
+  Transfers,
+  Users,
+  UsersInfo,
+  Withdraws,
+} from "./views";
 import {
   Navigate,
   Route,
@@ -34,11 +52,64 @@ function AppRoutes() {
             path="/login"
             element={isLoggedIn ? <Navigate to="/main" /> : <Login />}
           />
+          <Route path="/logout" element={<Logout />} />
           <Route
             path="/main"
             element={isLoggedIn ? <MainPage /> : <Navigate to="/login" />}
           />
-          {/* <Route path="/logout" element={<Logout />} /> */}
+
+          <Route
+            path="/transfers"
+            element={isLoggedIn ? <Transfers /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/users"
+            element={isLoggedIn ? <Users /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/withdraws"
+            element={isLoggedIn ? <Withdraws /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/replenishments"
+            element={isLoggedIn ? <Replenishments /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/ligamentColls"
+            element={isLoggedIn ? <LigamentColls /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/ligaments"
+            element={isLoggedIn ? <Ligaments /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/subscriptions"
+            element={isLoggedIn ? <Subscriptions /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/promocodes"
+            element={isLoggedIn ? <Promocodes /> : <Navigate to="/login" />}
+          />
+
+          <Route
+            path="/subscriptions/add/"
+            element={<SubscriptionsAdd />}
+          ></Route>
+          <Route
+            path="/subscriptions/info/:paramLevel"
+            element={<SubscriptionsInfo />}
+          ></Route>
+          <Route path="/ligaments/add/" element={<LigamentsAdd />}></Route>
+          <Route
+            path="/ligaments/info/:paramId"
+            element={<LigamentsInfo />}
+          ></Route>
+          <Route path="/promocodes/add/" element={<PromocodesAdd />}></Route>
+          <Route
+            path="/users/info/:paramId"
+            element={<UsersInfo />}
+          ></Route>
+
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
 

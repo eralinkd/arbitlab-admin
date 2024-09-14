@@ -29,6 +29,20 @@ html::-webkit-scrollbar {
   text-transform: uppercase;
 }
 
+.underline {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .bold {
   font-weight: 600;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+  gap: 28px;
 }

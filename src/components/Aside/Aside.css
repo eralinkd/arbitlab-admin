@@ -1,0 +1,153 @@
+.UIAside {
+    position: fixed;
+    top: 64px;
+    width: 200px;
+    height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #EAEDEF;
+}
+
+.UIAside .nav-additional {
+    padding: 12px 8px;
+    font-size: 16px;
+}
+
+.UIAside .nav-additional li button.active {
+    color: #1d1e20;
+    color: var(--text-color);
+}
+
+.UIAside .nav-additional li a,
+.UIAside .nav-additional li button {
+    display: block;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 30px;
+    color: var(--text-color);
+    transition: all 0.2s;
+    position: relative;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+}
+
+.UIAside .nav-additional li a:hover,
+.UIAside .nav-additional li button:hover {
+    background-color: #F3F6F7;
+}
+
+.UIAside .nav-additional li.active a {
+    color: #1d1e20;
+    background-color: #eaedef;
+}
+
+.UIAside .nav-additional li.active {
+    box-shadow: inset 2px 0 0 #1D1E20;
+}
+
+.UIAside .nav-additional li {
+    box-shadow: inset 2px 0 0 #C4C9CF;
+    padding-left: 2px;
+}
+
+.UIAside .profile {
+    height: 78px;
+    border-top: 1px solid #EAEDEF;
+    padding: 20px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.UIAside .profile:hover {
+    background-color: #F3F6F7;
+}
+
+.UIAside .profile .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #5D5E60;
+    color: var(--white);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.UIAside .profile .company {
+    width: 120px;
+    font-size: 14px;
+    color: var(--black);
+}
+
+.UIAside .profile .email {
+    width: 120px;
+    font-size: 12px;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
+
+.UIAside .dropdown {
+    position: absolute;
+    bottom: 4px;
+    left: 203px;
+    width: 300px;
+    border-radius: 4px;
+    border: 1px solid #C4C9CF;
+    box-shadow: rgba(55,63,71,20%) 0px 8px 16px 0px;
+    background-color: #FFFFFF;
+}
+
+.UIAside .dropdown .profile {
+    border-bottom: 1px solid #EAEDEF;
+}
+
+.UIAside .dropdown .company,
+.UIAside .dropdown .email {
+    width: 210px;
+}
+
+.UIAside .dropdown .logout {
+    padding: 16px;
+    border-top: 1px solid #EAEDEF;
+}
+
+.UIAside .dropdown .logout a {
+    color: #1C65AD;
+    font-size: 14px;
+}
+
+.UIAside .dropdown .logout a:hover {
+    text-decoration: underline;
+}
+
+.UIAside .dropdown .nav {
+    padding: 8px 8px 12px 15px;
+}
+
+
+
+.UIAside .nav > li > a::before,
+.UIAside .nav > li > button::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
+import { Aside, Header } from "../../components";
 
-import { getSubscription } from "../../api/api";
+import React from "react";
 import styles from "./MainPage.module.css";
+import useStore from "../../state/store";
 
 function MainPage() {
+  const welcomeData = useStore((state) => state.welcomeData);
 
-    useEffect(() => {
-        getSubscription().then((data) => {
-            console.log(data);
-        });
-    }, []);
-    
   return (
-    <div className="MainPage">
-      <h1>Main Page</h1>
-    </div>
+    <>
+      <Header></Header>
+      <Aside></Aside>
+      <div className={`asideMargin`}>
+        <h1 className={styles.greeting}>Здарова, {welcomeData}</h1>
+      </div>
+    </>
   );
 }
 
