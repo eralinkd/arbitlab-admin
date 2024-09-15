@@ -1,6 +1,10 @@
 import { Aside, Button, Header } from "../../components";
 import React, { useEffect, useState } from "react";
-import { getAllLigamentColls, getLigamentCollByUserId } from "../../api/api";
+import {
+  getAllLigamentColls,
+  getLigamentCollByUserId,
+  getLigamentCollCancel,
+} from "../../api/api";
 
 import styles from "../../assets/css/View.module.css";
 import { useNavigate } from "react-router-dom";
@@ -35,11 +39,19 @@ function LigamentColls() {
     if (!id) {
       getAllLigamentColls().then((data) => {
         setLigamentColls(data);
-      })
-      return
+      });
+      return;
     }
     getLigamentCollByUserId(id).then((data) => {
       setLigamentColls(data);
+    });
+  };
+
+  const cancelLigamentColl = (id) => {
+    getLigamentCollCancel(id).then(() => {
+      getAllLigamentColls().then((data) => {
+        setLigamentColls(data);
+      });
     });
   };
 
@@ -58,11 +70,7 @@ function LigamentColls() {
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
           ></input>
-           <Button
-            role="main"
-            text="Найти"
-            onClick={() => searchById(userId)}
-          />
+          <Button role="main" text="Найти" onClick={() => searchById(userId)} />
         </div>
 
         <table className={styles.table}>
@@ -96,7 +104,17 @@ function LigamentColls() {
                 </td>
                 <td>{coll.amount || "-"}</td>
                 <td>{coll.daysOfInvest || "-"}</td>
-                <td>{coll.done ? "✅" : "❌"}</td>
+                <td>
+                  {coll.done ? (
+                    "✅"
+                  ) : (
+                    <Button
+                      role={"main"}
+                      text="Завершить"
+                      onClick={() => cancelLigamentColl(coll.id)}
+                    ></Button>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

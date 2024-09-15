@@ -136,6 +136,10 @@ export const getUserInfo = async (email) => {
 };
 
 // payment
+export const putWithdrawCancel = async (id) => {
+  const response = await axiosInstance.put(`/payment/withdraw/cancel/${id}`);
+  return response.data;
+}
 export const putPaymentConfirm = async (id) => {
   const response = await axiosInstance.put(`/payment/confirm/${id}`);
   return response.data;
@@ -183,6 +187,11 @@ export const getLigamentCollByLigamentId = async (id) => {
 
 export const getAllLigamentColls = async () => {
   const response = await axiosInstance.get(`/ligamentColl/getAll`);
+  return response.data;
+};
+
+export const getLigamentCollCancel = async (id) => {
+  const response = await axiosInstance.get(`/ligamentColl/cancel/${id}`);
   return response.data;
 };
 

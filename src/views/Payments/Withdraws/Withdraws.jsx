@@ -1,6 +1,11 @@
 import { Aside, Button, Header } from "../../../components";
 import React, { useEffect, useState } from "react";
-import { getAllWithdraws, getAllWithdrawsByUserId, putPaymentConfirm } from "../../../api/api";
+import {
+  getAllWithdraws,
+  getAllWithdrawsByUserId,
+  putPaymentConfirm,
+  putWithdrawCancel,
+} from "../../../api/api";
 
 import styles from "../../../assets/css/View.module.css";
 import { useNavigate } from "react-router-dom";
@@ -35,8 +40,8 @@ function Withdraws() {
     if (!id) {
       getAllWithdraws().then((data) => {
         setWithdraws(data);
-      })
-      return
+      });
+      return;
     }
     getAllWithdrawsByUserId(id).then((data) => {
       setWithdraws(data);
@@ -48,7 +53,15 @@ function Withdraws() {
       getAllWithdraws().then((data) => {
         setWithdraws(data);
       });
-    })
+    });
+  };
+
+  const cancelWithdraw = (id) => {
+    putWithdrawCancel(id).then(() => {
+      getAllWithdraws().then((data) => {
+        setWithdraws(data);
+      });
+    });
   };
 
   return (
@@ -66,11 +79,7 @@ function Withdraws() {
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
           ></input>
-           <Button
-            role="main"
-            text="Найти"
-            onClick={() => searchById(userId)}
-          />
+          <Button role="main" text="Найти" onClick={() => searchById(userId)} />
         </div>
 
         <table className={styles.table}>
@@ -97,12 +106,27 @@ function Withdraws() {
                 </td>
                 <td>{item.source || "-"}</td>
                 <td>{item.paymentType || "-"}</td>
-                <td>{item.confirmed ? "✅" : item.cancelled ? "❌" : 
-                    <Button
-                    role={"main"}
-                    text="Подтвердить"
-                    onClick={() => confirmReplenishment(item.paymentId)}></Button>
-                  }</td>
+                <td>
+                  {item.confirmed ? (
+                    "✅"
+                  ) : item.cancelled ? (
+                    "❌"
+                  ) : (
+                    <div className={styles.status}>
+                      <Button
+                        role={"main"}
+                        text="Подтвердить"
+                        onClick={() => confirmReplenishment(item.paymentId)}
+                      ></Button>
+
+                      <Button
+                        role={"warning"}
+                        text="отменить"
+                        onClick={() => cancelWithdraw(item.paymentId)}
+                      ></Button>
+                    </div>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

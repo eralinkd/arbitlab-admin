@@ -90,3 +90,10 @@
   font-size: 16px;
   font-weight: 600;
 }
+
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
