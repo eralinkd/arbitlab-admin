@@ -4,6 +4,7 @@ import {
   getAllLigamentColls,
   getLigamentCollByUserId,
   getLigamentCollCancel,
+  getLigamentCollFinish,
 } from "../../api/api";
 
 import styles from "../../assets/css/View.module.css";
@@ -54,6 +55,13 @@ function LigamentColls() {
       });
     });
   };
+  const finishLigamentColl = (id) => {
+    getLigamentCollFinish(id).then(() => {
+      getAllLigamentColls().then((data) => {
+        setLigamentColls(data);
+      });
+    });
+  };
 
   return (
     <>
@@ -83,6 +91,7 @@ function LigamentColls() {
               <th>Вложения</th>
               <th>Дней инвестирования</th>
               <th>Выполнено</th>
+              <th>Завершено</th>
             </tr>
           </thead>
           <tbody>
@@ -110,8 +119,19 @@ function LigamentColls() {
                   ) : (
                     <Button
                       role={"main"}
-                      text="Завершить"
+                      text="Остановить"
                       onClick={() => cancelLigamentColl(coll.id)}
+                    ></Button>
+                  )}
+                </td>
+                <td>
+                  {coll.done ? (
+                    "✅"
+                  ) : (
+                    <Button
+                      role={"main"}
+                      text="Завершить"
+                      onClick={() => finishLigamentColl(coll.id)}
                     ></Button>
                   )}
                 </td>

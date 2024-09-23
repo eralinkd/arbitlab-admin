@@ -195,6 +195,11 @@ export const getLigamentCollCancel = async (id) => {
   return response.data;
 };
 
+export const getLigamentCollFinish = async (id) => {
+  const response = await axiosInstance.get(`/ligamentColl/finish/${id}`);
+  return response.data;
+};
+
 // ligament
 export const getLigament = async (id) => {
   const response = await axiosInstance.get(`/ligament/${id}`);
