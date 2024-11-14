@@ -226,6 +226,18 @@ export const getAllLigaments = async () => {
   return response.data;
 };
 
+// statictic
+
+export const getcheckWithdraws = async () => {
+  const response = await axiosInstance.get(`/statistic/checkWithdraws`);
+  return response.data;
+};
+
+export const getCheckStatistic = async () => {
+  const response = await axiosInstance.get(`/statistic/allStat`);
+  return response.data;
+}
+
 // subscription
 export const getSubscriptionInfo = async (level) => {
   const response = await axiosInstance.get(`/subscription/${level}`);

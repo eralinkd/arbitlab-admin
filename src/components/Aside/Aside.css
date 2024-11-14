@@ -54,6 +54,20 @@
     padding-left: 2px;
 }
 
+.UIAside .nav-additional .stat-number {
+    position: absolute;
+    right: 10px;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    font-size: 12px;
+    background-color: #FF4D4F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
 .UIAside .profile {
     height: 78px;
     border-top: 1px solid #EAEDEF;

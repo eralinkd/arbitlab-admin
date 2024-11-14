@@ -1,8 +1,53 @@
 .greeting {
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
-    height: 90px;
-    font-size: 32px;
-    border-bottom: 1px solid #eaedef;
-  }
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 90px;
+  font-size: 32px;
+  border-bottom: 1px solid #eaedef;
+}
+
+.counters {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 600px);
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 60px;
+  margin: 40px auto;
+}
+
+.counters .center {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+}
+
+.counters div {
+  max-width: 500px;
+
+  width: 100%;
+  height: fit-content;
+  padding: 25px 15px;
+  margin: auto;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  border: 3px solid #eaedef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+.counters div h3 {
+  font-size: 22px;
+  text-align: center;
+  line-height: 150%;
+  
+}
+
+.counters div p {
+  font-size: 32px;
+  font-weight: 600;
+}

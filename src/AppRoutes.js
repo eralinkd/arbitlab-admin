@@ -53,9 +53,13 @@ function AppRoutes() {
             element={isLoggedIn ? <Navigate to="/main" /> : <Login />}
           />
           <Route path="/logout" element={<Logout />} />
-          <Route
+          {/* <Route
             path="/main"
             element={isLoggedIn ? <MainPage /> : <Navigate to="/login" />}
+          /> */}
+          <Route
+            path="/main"
+            element={<MainPage />}
           />
 
           <Route
